@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Post from "./Post";
 
 const Profile = () => {
@@ -11,8 +11,20 @@ const Profile = () => {
     "https://via.placeholder.com/300"
   ]);
 
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    console.log(search);
+  }, [search]);
+
   return (
     <>
+      <input
+        placeholder="search profile"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+
       <img src="https://via.placeholder.com/150" alt="profile picture" />
       <div>@{username}</div>
       <button onClick={() => setIsFollowed(!isFollowed)}>
