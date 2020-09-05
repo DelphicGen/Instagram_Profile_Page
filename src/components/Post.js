@@ -3,7 +3,7 @@ import React from "react";
 const Post = ({ src }) => {
   return (
     <>
-      <img src={src} />
+      <img style={{ marginRight: "4px" }} src={src} />
     </>
   );
 };
