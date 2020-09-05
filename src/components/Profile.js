@@ -24,6 +24,8 @@ const Profile = () => {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
+      <br />
+      <br />
 
       <img src="https://via.placeholder.com/150" alt="profile picture" />
       <div>@{username}</div>
@@ -34,9 +36,11 @@ const Profile = () => {
       <div>Followers</div>
       <div>Following</div>
       <div>Bio</div>
-      {posts.length > 0
-        ? posts.map((post, index) => <Post src={post} key={index} />)
-        : "No Post Yet"}
+      <div className="posts">
+        {posts.length > 0
+          ? posts.map((post, index) => <Post src={post} key={index} />)
+          : "No Post Yet"}
+      </div>
     </>
   );
 };
